@@ -1,0 +1,16 @@
+@import './theme.scss';
+
+.button {
+	padding: 1rem 2rem;
+	background-color: $accent;
+	text-transform: uppercase;
+	color: $light;
+	transition: 0.5s all ease;
+	border: 1px solid transparent;
+
+	&:hover {
+		border-radius: 0.5rem;
+		background-color: $dark;
+		border: 1px solid $accent;
+	}
+}

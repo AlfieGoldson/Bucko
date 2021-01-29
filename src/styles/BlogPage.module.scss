@@ -1,0 +1,7 @@
+@import './theme.scss';
+
+.postsContainer {
+	display: grid;
+	padding-bottom: 4rem;
+	grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+}

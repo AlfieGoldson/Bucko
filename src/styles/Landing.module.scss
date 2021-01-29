@@ -1,0 +1,40 @@
+@import '../styles/theme.scss';
+
+.landing {
+	position: relative;
+	height: 600px;
+	background-color: $dark;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	color: $light;
+	overflow: hidden;
+
+	.landingImg {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+		opacity: 0.04;
+		pointer-events: none;
+		transition: 0.75s all ease;
+	}
+
+	.container {
+		z-index: 10;
+		h1 {
+			font-size: 5rem;
+			font-weight: bold;
+			margin-bottom: 4rem;
+		}
+	}
+
+	&:hover {
+		.landingImg {
+			transform: scale(1.05);
+			opacity: 0.08;
+		}
+	}
+}

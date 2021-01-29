@@ -1,0 +1,39 @@
+@import './theme.scss';
+
+.header {
+	height: 4rem;
+	background-color: $dark;
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	border-bottom: 1px solid $border;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	gap: 2.5rem;
+	padding: 0 2rem;
+}
+
+.headerImg {
+	cursor: pointer;
+
+	img {
+		margin-top: 8px;
+	}
+}
+
+.navItem {
+	font-weight: 500;
+	opacity: 0.72;
+	cursor: pointer;
+	color: $light;
+
+	&:hover {
+		opacity: 1;
+	}
+}
