@@ -24,7 +24,7 @@ export default function Post({ post }: Props) {
 			<Content>
 				<article className='mb-32'>
 					<Head>
-						<title>{post.title}</title>
+						<title>{post.title} • Paro</title>
 						<meta property='og:image' content={post.ogImage.url} />
 					</Head>
 					<div dangerouslySetInnerHTML={{ __html: post.content }} />

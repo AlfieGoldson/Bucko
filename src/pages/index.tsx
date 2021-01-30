@@ -8,7 +8,7 @@ export default function Home() {
 	return (
 		<>
 			<Head>
-				<title>Paro Studio</title>
+				<title>Home • Paro</title>
 			</Head>
 			<Layout>
 				<Landing />
