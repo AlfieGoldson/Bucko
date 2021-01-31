@@ -1,0 +1,68 @@
+@import './theme.scss';
+
+.contactForm {
+	position: relative;
+	margin-top: 8rem;
+	margin-bottom: 2rem;
+	padding: 4rem;
+	padding-bottom: 4rem;
+	background-color: $dark;
+	box-shadow: 0 0 16px rgba($darker, 0.16);
+	z-index: 20;
+	color: $light;
+
+	.formTitle {
+		color: $accent;
+		padding: 0;
+	}
+
+	.formSubtitle {
+		font-size: 1.5rem;
+	}
+
+	.form {
+		margin-top: 4rem;
+		.userInfo {
+			width: 100%;
+			display: flex;
+			gap: 2rem;
+		}
+
+		.formLabel {
+			margin: 2rem 0 3rem 0;
+			position: relative;
+			flex: 1;
+
+			.labelText {
+				opacity: 0.72;
+				display: block;
+				margin-bottom: 1rem;
+			}
+
+			input,
+			textarea {
+				width: 100%;
+				padding: 0.75rem 1rem;
+				background-color: $darker;
+				color: $light;
+				font-family: 'Montserrat', sans-serif;
+				font-size: 1rem;
+				font-weight: normal;
+			}
+
+			textarea {
+				resize: vertical;
+			}
+
+			&::after {
+				content: '';
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				height: 2px;
+				background-color: $accent;
+			}
+		}
+	}
+}
