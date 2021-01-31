@@ -10,7 +10,7 @@ export function Landing() {
 					<br />
 					ideas to life!
 				</h1>
-				<Button href='#' title='View Work' />
+				<Button href='/#work' title='View Work' />
 			</div>
 			<img
 				src='/landing.png'

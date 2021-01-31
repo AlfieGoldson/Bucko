@@ -1,18 +1,17 @@
 import styles from '../styles/MobileNav.module.scss';
-import Link from 'next/link';
 import { createPortal } from 'react-dom';
+import { PropsWithChildren } from 'react';
 
 interface Props {
 	closeNav: () => void;
 }
 
-export function MobileNav({ closeNav }: Props) {
+export function MobileNav({ closeNav, children }: PropsWithChildren<Props>) {
 	return createPortal(
 		<div className={styles.mobileNav}>
-			<a onClick={closeNav} className={styles.closeBtn}>
-				X
-			</a>
-			Mobile
+			<div className={styles.navGroup} onClick={closeNav}>
+				{children}
+			</div>
 		</div>,
 		document.getElementById('mobile-nav')
 	);

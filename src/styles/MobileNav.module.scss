@@ -2,7 +2,7 @@
 
 .mobileNav {
 	position: fixed;
-	top: 0;
+	top: 4rem;
 	left: 0;
 	right: 0;
 	bottom: 0;
@@ -13,7 +13,20 @@
 
 	.closeBtn {
 		position: absolute;
-		top: 2rem;
-		right: 2rem;
+		top: 1rem;
+		right: 1rem;
+		stroke: $light;
+		stroke-width: 0.25rem;
+		opacity: 0.72;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	.navGroup {
+		display: flex;
+		flex-direction: column;
+		font-size: 3rem;
 	}
 }
