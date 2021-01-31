@@ -1,9 +1,10 @@
 import styles from '../styles/Footer.module.scss';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 export function Footer() {
 	return (
-		<div className={styles.footer}>
+		<motion.div className={styles.footer} layoutId='footer'>
 			<Link href='/#'>
 				<a>
 					<img
@@ -14,6 +15,6 @@ export function Footer() {
 				</a>
 			</Link>
 			<p className={styles.copyright}>COPYRIGHT © 2021 PARO.STUDIO</p>
-		</div>
+		</motion.div>
 	);
 }

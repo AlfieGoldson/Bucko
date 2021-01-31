@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.6.0",
+    "framer-motion": "^3.2.2-rc.1",
     "gray-matter": "^4.0.2",
     "next": "10.0.5",
     "react": "17.0.1",

@@ -3,4 +3,9 @@
 .thumbnail {
 	background-color: $dark;
 	padding: 2rem;
+
+	.title {
+		color: $light;
+		cursor: pointer;
+	}
 }

@@ -7,6 +7,7 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import { Layout } from '../../components/Layout';
 import { Content } from '../../components/Content';
 import { ParsedUrlQuery } from 'querystring';
+import { motion } from 'framer-motion';
 
 interface Props {
 	post: IPost;
@@ -32,7 +33,15 @@ export default function Post({ post }: Props) {
 						<title>{post.title} • Paro</title>
 						<meta property='og:image' content={post.ogImage.url} />
 					</Head>
-					<div dangerouslySetInnerHTML={{ __html: post.content }} />
+					<motion.h1 layoutId={`postTitle_${post.slug}`}>
+						{post.title}
+					</motion.h1>
+					<motion.div
+						dangerouslySetInnerHTML={{ __html: post.content }}
+						initial={{ opacity: 0, y: 100 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ delay: 0.2 }}
+					/>
 				</article>
 			</Content>
 		</Layout>
