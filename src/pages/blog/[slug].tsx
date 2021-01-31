@@ -3,12 +3,17 @@ import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
 import { getPostBySlug, getAllPosts, IPost } from '../../util/api';
 import markdownToHtml from '../../util/markdownToHtml';
-import { GetStaticPropsContext } from 'next';
+import { GetStaticPaths, GetStaticProps } from 'next';
 import { Layout } from '../../components/Layout';
 import { Content } from '../../components/Content';
+import { ParsedUrlQuery } from 'querystring';
 
 interface Props {
 	post: IPost;
+}
+
+interface StaticParams extends ParsedUrlQuery {
+	slug: string;
 }
 
 export default function Post({ post }: Props) {
@@ -34,9 +39,9 @@ export default function Post({ post }: Props) {
 	);
 }
 
-export async function getStaticProps({
+export const getStaticProps: GetStaticProps<Props, StaticParams> = async ({
 	params,
-}: GetStaticPropsContext<{ slug: string }>) {
+}) => {
 	const post = getPostBySlug(params.slug);
 	const content = await markdownToHtml(post.content || '');
 
@@ -48,9 +53,9 @@ export async function getStaticProps({
 			},
 		},
 	};
-}
+};
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths<StaticParams> = async () => {
 	const posts = getAllPosts();
 
 	return {
@@ -63,4 +68,4 @@ export async function getStaticPaths() {
 		}),
 		fallback: false,
 	};
-}
+};

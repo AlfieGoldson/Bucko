@@ -4,8 +4,14 @@ import { Content } from '../components/Content';
 import styles from '../styles/HomePage.module.scss';
 import { Layout } from '../components/Layout';
 import { ContactForm } from '../components/ContactForm';
+import { getAllPosts, IPost } from '../util/api';
+import { GetStaticProps } from 'next';
 
-export default function Home() {
+interface Props {
+	artworks: IPost[];
+}
+
+export default function Home({ artworks }: Props) {
 	return (
 		<>
 			<Head>
@@ -16,6 +22,11 @@ export default function Home() {
 				<div className={styles.lightAltBG}>
 					<Content>
 						<h2 id='work'>Our Work.</h2>
+						<div>
+							{artworks.map((artwork) => (
+								<p>{artwork.title}</p>
+							))}
+						</div>
 					</Content>
 				</div>
 				<Content>
@@ -42,3 +53,13 @@ export default function Home() {
 		</>
 	);
 }
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+	const artworks = getAllPosts().filter((p) => p.type === 'Artwork');
+
+	return {
+		props: {
+			artworks,
+		},
+	};
+};

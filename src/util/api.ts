@@ -15,6 +15,7 @@ export interface IPostMetadata {
 	author: { name: string; picture: string };
 	date: number;
 	ogImage: { url: string };
+	type: 'Article' | 'Artwork';
 }
 
 export interface IPost extends IPostMetadata {

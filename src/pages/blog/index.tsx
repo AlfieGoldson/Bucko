@@ -5,6 +5,7 @@ import styles from '../../styles/BlogPage.module.scss';
 import { Layout } from '../../components/Layout';
 import { Content } from '../../components/Content';
 import Head from 'next/head';
+import { GetStaticProps } from 'next';
 
 interface Props {
 	posts: IPost[];
@@ -28,7 +29,7 @@ export default function Blog({ posts }: Props) {
 	);
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps<Props> = async () => {
 	const posts = getAllPosts();
 
 	return {
@@ -36,4 +37,4 @@ export async function getStaticProps() {
 			posts,
 		},
 	};
-}
+};
