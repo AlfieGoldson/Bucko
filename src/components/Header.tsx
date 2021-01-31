@@ -2,15 +2,18 @@ import styles from '../styles/Header.module.scss';
 import Link from 'next/link';
 import { useState } from 'react';
 import { usePopper } from 'react-popper';
+import { MobileNav } from './MobileNav';
 
 export function Header() {
-	const [dropdownOpened, setDropdownOpened] = useState(false);
-	const [buttonRef, setButtonRef] = useState(null);
-	const [dropdownRef, setDropdownRef] = useState(null);
-	const { styles: popperStyles, attributes } = usePopper(
-		buttonRef,
-		dropdownRef
-	);
+	// const [dropdownOpened, setDropdownOpened] = useState(false);
+	// const [buttonRef, setButtonRef] = useState(null);
+	// const [dropdownRef, setDropdownRef] = useState(null);
+	// const { styles: popperStyles, attributes } = usePopper(
+	// 	buttonRef,
+	// 	dropdownRef
+	// );
+
+	const [mobileNavOpened, setMobileNavOpened] = useState(false);
 
 	return (
 		<div className={styles.header}>
@@ -21,7 +24,7 @@ export function Header() {
 							<img src='/logo.png' alt='logo' />
 						</a>
 					</Link>
-					<div className={styles.navGroup}>
+					<div className={styles.desktopNavGroup}>
 						<Link href='/#'>
 							<a className={styles.navItem}>Home</a>
 						</Link>
@@ -40,7 +43,23 @@ export function Header() {
 					</div>
 				</div>
 				<div className={styles.navGroup}>
-					<Link href='#'>
+					<a
+						className={styles.navItem}
+						onClick={() => setMobileNavOpened(true)}
+					>
+						<svg
+							width='80'
+							height='80'
+							viewBox='0 0 80 80'
+							fill='none'
+							xmlns='http://www.w3.org/2000/svg'
+						>
+							<path d='M16 22L64 22' />
+							<path d='M16 40L64 40' />
+							<path d='M16 58L64 58' />
+						</svg>
+					</a>
+					{/* <Link href='#'>
 						<a
 							className={styles.navItem}
 							onMouseEnter={() => {
@@ -73,8 +92,8 @@ export function Header() {
 					<Link href='/cart'>
 						<a className={styles.navItem}>
 							<svg
-								width='24'
-								height='24'
+								width='80'
+								height='80'
 								viewBox='0 0 80 80'
 								fill='none'
 								xmlns='http://www.w3.org/2000/svg'
@@ -86,9 +105,12 @@ export function Header() {
 								<path d='M59.402 61.4989C61.0097 60.5707 62.9905 60.5707 64.5982 61.4989C66.2059 62.4271 67.1963 64.1425 67.1963 65.9989C67.1963 67.8553 66.2059 69.5707 64.5982 70.4989C62.9905 71.4271 61.0097 71.4271 59.402 70.4989C57.7943 69.5707 56.804 67.8553 56.804 65.9989C56.804 64.1425 57.7943 62.4271 59.402 61.4989Z' />
 							</svg>
 						</a>
-					</Link>
+					</Link> */}
 				</div>
 			</div>
+			{mobileNavOpened && (
+				<MobileNav closeNav={() => setMobileNavOpened(false)} />
+			)}
 		</div>
 	);
 }

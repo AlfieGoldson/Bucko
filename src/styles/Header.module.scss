@@ -18,10 +18,19 @@
 	justify-content: space-between;
 	padding: 0 2rem;
 
-	.navGroup {
+	.navGroup,
+	.desktopNavGroup {
 		display: flex;
 		align-items: center;
 		gap: 2.5rem;
+	}
+
+	.desktopNavGroup {
+		display: none;
+
+		@media only screen and (min-width: 960px) {
+			display: flex;
+		}
 	}
 }
 
@@ -47,7 +56,9 @@
 	svg {
 		fill: transparent;
 		stroke: $light;
-		stroke-width: 4px;
+		stroke-width: 0.25rem;
+		width: 2rem;
+		height: 2rem;
 	}
 }
 

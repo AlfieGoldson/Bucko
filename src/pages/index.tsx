@@ -24,7 +24,7 @@ export default function Home({ artworks }: Props) {
 						<h2 id='work'>Our Work.</h2>
 						<div>
 							{artworks.map((artwork) => (
-								<p>{artwork.title}</p>
+								<p key={artwork.slug}>{artwork.title}</p>
 							))}
 						</div>
 					</Content>
