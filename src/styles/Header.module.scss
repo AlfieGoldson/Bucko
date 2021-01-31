@@ -42,7 +42,8 @@
 	}
 }
 
-.navItem {
+.navItem,
+.mobileNavBtn {
 	font-weight: 500;
 	opacity: 0.72;
 	cursor: pointer;
@@ -59,6 +60,14 @@
 		stroke-width: 0.25rem;
 		width: 2rem;
 		height: 2rem;
+	}
+}
+
+.mobileNavBtn {
+	display: block;
+
+	@media only screen and (min-width: 960px) {
+		display: none;
 	}
 }
 

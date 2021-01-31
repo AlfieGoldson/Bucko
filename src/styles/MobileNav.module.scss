@@ -11,19 +11,6 @@
 	padding: 2rem;
 	color: $light;
 
-	.closeBtn {
-		position: absolute;
-		top: 1rem;
-		right: 1rem;
-		stroke: $light;
-		stroke-width: 0.25rem;
-		opacity: 0.72;
-
-		&:hover {
-			opacity: 1;
-		}
-	}
-
 	.navGroup {
 		display: flex;
 		flex-direction: column;

@@ -54,7 +54,7 @@ export function Header() {
 					{mobileNavOpened ? (
 						<a
 							onClick={() => setMobileNavOpened(false)}
-							className={styles.navItem}
+							className={styles.mobileNavBtn}
 						>
 							<svg
 								width='80'
@@ -69,7 +69,7 @@ export function Header() {
 						</a>
 					) : (
 						<a
-							className={styles.navItem}
+							className={styles.mobileNavBtn}
 							onClick={() => setMobileNavOpened(true)}
 						>
 							<svg
