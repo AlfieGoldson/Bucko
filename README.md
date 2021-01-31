@@ -2,6 +2,16 @@
 
 [paro.studio](https://paro.studio)
 
+## Stack
+
+-   ReactJS
+-   NextJS
+-   PopperJS
+-   Gray Matter
+-   Remark
+-   Sass
+-   Framer Motion
+
 ## Todo
 
 -   Blog

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { usePopper } from 'react-popper';
 import { MobileNav } from './MobileNav';
+import { motion, AnimatePresence } from 'framer-motion';
 
 function NavLinks() {
 	return (
@@ -51,40 +52,41 @@ export function Header() {
 					</div>
 				</div>
 				<div className={styles.navGroup}>
-					{mobileNavOpened ? (
-						<a
-							onClick={() => setMobileNavOpened(false)}
+					<AnimatePresence>
+						<motion.a
+							onClick={() => setMobileNavOpened((a) => !a)}
 							className={styles.mobileNavBtn}
+							initial={{ opacity: 0 }}
+							animate={{ opacity: 1 }}
+							exit={{ opacity: 0 }}
+							key='mobileNavBtn'
 						>
-							<svg
-								width='80'
-								height='80'
-								viewBox='0 0 80 80'
-								fill='none'
-								xmlns='http://www.w3.org/2000/svg'
-							>
-								<path d='M55.5564 55.6693L24.4437 24.5566' />
-								<path d='M24.4436 55.6693L55.5563 24.5566' />
-							</svg>
-						</a>
-					) : (
-						<a
-							className={styles.mobileNavBtn}
-							onClick={() => setMobileNavOpened(true)}
-						>
-							<svg
-								width='80'
-								height='80'
-								viewBox='0 0 80 80'
-								fill='none'
-								xmlns='http://www.w3.org/2000/svg'
-							>
-								<path d='M16 22L64 22' />
-								<path d='M16 40L64 40' />
-								<path d='M16 58L64 58' />
-							</svg>
-						</a>
-					)}
+							{mobileNavOpened ? (
+								<svg
+									width='80'
+									height='80'
+									viewBox='0 0 80 80'
+									fill='none'
+									xmlns='http://www.w3.org/2000/svg'
+								>
+									<path d='M55.5564 55.6693L24.4437 24.5566' />
+									<path d='M24.4436 55.6693L55.5563 24.5566' />
+								</svg>
+							) : (
+								<svg
+									width='80'
+									height='80'
+									viewBox='0 0 80 80'
+									fill='none'
+									xmlns='http://www.w3.org/2000/svg'
+								>
+									<path d='M16 22L64 22' />
+									<path d='M16 40L64 40' />
+									<path d='M16 58L64 58' />
+								</svg>
+							)}
+						</motion.a>
+					</AnimatePresence>
 					{/* <Link href='#'>
 						<a
 							className={styles.navItem}
