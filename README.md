@@ -10,15 +10,15 @@
     -   [x] Mobile Menu
 -   Animations
     -   [x] Page Transitions
-    -   [] Menu Animation
-    -   [] Scroll Animations
+    -   [ ] Menu Animation
+    -   [ ] Scroll Animations
 -   Internationalization
-    -   [] i18n setup
-    -   [] English Translation
-    -   [] French Translation
+    -   [ ] i18n setup
+    -   [ ] English Translation
+    -   [ ] French Translation
 -   Authentication
-    -   [] Sign Up
-    -   [] Log In
+    -   [ ] Sign Up
+    -   [ ] Log In
 -   Shop
-    -   [] Cart System
-    -   [] Stripe Checkout
+    -   [ ] Cart System
+    -   [ ] Stripe Checkout
