@@ -1,8 +1,8 @@
-import styles from '../styles/Header.module.scss';
+import styles from './Header.module.scss';
 import Link from 'next/link';
 import { useState } from 'react';
 import { usePopper } from 'react-popper';
-import { MobileNav } from './MobileNav';
+import { MobileNav } from '@components/MobileNav';
 import { motion, AnimatePresence } from 'framer-motion';
 
 function NavLinks() {

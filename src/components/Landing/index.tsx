@@ -1,5 +1,5 @@
-import styles from '../styles/Landing.module.scss';
-import { Button } from './Button';
+import styles from './Landing.module.scss';
+import { Button } from '@components/Button';
 
 export function Landing() {
 	return (

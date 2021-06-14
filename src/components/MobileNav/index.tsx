@@ -1,4 +1,4 @@
-import styles from '../styles/MobileNav.module.scss';
+import styles from './MobileNav.module.scss';
 import { createPortal } from 'react-dom';
 import { PropsWithChildren } from 'react';
 

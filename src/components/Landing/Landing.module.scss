@@ -1,8 +1,8 @@
-@import '../styles/theme.scss';
+@import '@styles/theme.scss';
 
 .landing {
 	position: relative;
-	height: 600px;
+	height: 90vh;
 	background-color: $dark;
 	display: flex;
 	flex-direction: column;

@@ -1,11 +1,12 @@
-import { Landing } from '../components/Landing';
+import { Landing } from '@components/Landing';
 import Head from 'next/head';
-import { Content } from '../components/Content';
-import styles from '../styles/HomePage.module.scss';
-import { Layout } from '../components/Layout';
-import { ContactForm } from '../components/ContactForm';
-import { getAllPosts, IPost } from '../util/api';
+import { Content } from '@components/Content';
+import styles from '@styles/pages/HomePage.module.scss';
+import { Layout } from '@components/Layout';
+import { ContactForm } from '@components/ContactForm';
+import { getAllPosts, IPost } from '@util/api';
 import { GetStaticProps } from 'next';
+import { LogoGrid } from '@components/LogoGrid';
 
 interface Props {
 	artworks: IPost[];
@@ -19,16 +20,56 @@ export default function Home({ artworks }: Props) {
 			</Head>
 			<Layout>
 				<Landing />
-				<div className={styles.lightAltBG}>
-					<Content>
-						<h2 id='work'>Our Work.</h2>
-						<div>
-							{artworks.map((artwork) => (
-								<p key={artwork.slug}>{artwork.title}</p>
-							))}
-						</div>
-					</Content>
-				</div>
+				<Content>
+					<LogoGrid
+						title={
+							<>
+								Designed
+								<br />
+								with{' '}
+								<span role='img' aria-label='heart emoji'>
+									❤️
+								</span>
+								.
+							</>
+						}
+						cards={[
+							{
+								title: 'Corehalla',
+								image: '/work/logos/Corehalla.jpg',
+							},
+							{
+								title: 'Taikiro',
+								image: '/work/logos/Taikiro.jpg',
+							},
+							{
+								title: 'Aerolite',
+								image: '/work/logos/Aerolite.jpg',
+							},
+							{
+								title: 'Bamboo',
+								image: '/work/logos/Bamboo.jpg',
+							},
+							{
+								title: 'Bucko',
+								image: '/work/logos/Bucko.jpg',
+							},
+							{
+								title: 'Ludopod',
+								image: '/work/logos/Ludopod.jpg',
+							},
+							{
+								title: 'TheMegaPixelArt',
+								image: '/work/logos/TheMegaPixelArt.jpg',
+							},
+						]}
+					/>
+					<div>
+						{artworks.map((artwork) => (
+							<p key={artwork.slug}>{artwork.title}</p>
+						))}
+					</div>
+				</Content>
 				<Content>
 					<h2 id='about'>About Us.</h2>
 					<p>

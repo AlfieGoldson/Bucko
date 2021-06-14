@@ -1,6 +1,6 @@
-import styles from '../styles/PostThumbnail.module.scss';
+import styles from './PostThumbnail.module.scss';
 import Link from 'next/link';
-import { IPost } from '../util/api';
+import { IPost } from '@util/api';
 import { motion } from 'framer-motion';
 
 interface Props {

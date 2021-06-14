@@ -1,7 +1,7 @@
 import { PropsWithChildren } from 'react';
-import { Footer } from './Footer';
-import { Header } from './Header';
-import styles from '../styles/Layout.module.scss';
+import { Footer } from '@components/Footer';
+import { Header } from '@components/Header';
+import styles from './Layout.module.scss';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 

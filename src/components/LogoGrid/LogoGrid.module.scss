@@ -1,0 +1,65 @@
+.wrapper {
+	overflow: hidden;
+	display: grid;
+	grid-template-areas: 'main';
+	align-items: center;
+	padding: 4rem;
+	margin: 0 auto;
+
+	.groupTitle {
+		grid-area: main;
+		color: white;
+		font-size: 6rem;
+		z-index: 1;
+		text-shadow: 0 0 2rem #ffffff22;
+		pointer-events: none;
+	}
+
+	.cardGroup {
+		grid-area: main;
+		padding: 4rem;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+		direction: rtl;
+		transform-origin: right center;
+		transition: 0.05s transform ease;
+		gap: 1rem;
+
+		overflow: hidden;
+		-webkit-mask-image: radial-gradient(
+			circle at 50% 50%,
+			black 10%,
+			rgba(0, 0, 0, 0.1) 50%
+		);
+		mask-image: radial-gradient(
+			circle at 50% 50%,
+			black 10%,
+			rgba(0, 0, 0, 0.1) 50%
+		);
+		-webkit-mask-position: 0% 50%;
+		mask-position: 0% 50%;
+		-webkit-mask-repeat: no-repeat;
+		mask-repeat: no-repeat;
+		-webkit-mask-size: 200% 200%;
+		mask-size: 200% 200%;
+
+		.card {
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+			transition: 0.25s all ease;
+			border: 2px solid transparent;
+			background-color: var(--bg-alt);
+			cursor: pointer;
+			overflow: hidden;
+			border-radius: 0.5rem;
+
+			&:hover {
+				border: 2px solid #ffffff88;
+				box-shadow: 0 0 0.5rem #ffffff88;
+				transform: perspective(120px) scale(1.1);
+				border-radius: 1rem;
+			}
+		}
+	}
+}
