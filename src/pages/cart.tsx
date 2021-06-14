@@ -1,6 +1,6 @@
 import { Content } from '@components/Content';
 import { Layout } from '@components/Layout';
-import styles from '@styles/CartPage.module.scss';
+import styles from '@styles/pages/CartPage.module.scss';
 import Head from 'next/head';
 
 export default function Cart() {
