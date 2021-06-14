@@ -1,9 +1,9 @@
-import { getAllPosts, IPost } from '../../util/api';
-import { PostThumbnail } from '../../components/PostThumbnail';
+import { getAllPosts, IPost } from '@util/api';
+import { PostThumbnail } from '@components/PostThumbnail';
 
-import styles from '../../styles/BlogPage.module.scss';
-import { Layout } from '../../components/Layout';
-import { Content } from '../../components/Content';
+import styles from '@styles/BlogPage.module.scss';
+import { Layout } from '@components/Layout';
+import { Content } from '@components/Content';
 import Head from 'next/head';
 import { GetStaticProps } from 'next';
 

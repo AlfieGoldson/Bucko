@@ -1,11 +1,11 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
-import { getPostBySlug, getAllPosts, IPost } from '../../util/api';
-import markdownToHtml from '../../util/markdownToHtml';
+import { getPostBySlug, getAllPosts, IPost } from '@util/api';
+import markdownToHtml from '@util/markdownToHtml';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { Layout } from '../../components/Layout';
-import { Content } from '../../components/Content';
+import { Layout } from '@components/Layout';
+import { Content } from '@components/Content';
 import { ParsedUrlQuery } from 'querystring';
 import { motion } from 'framer-motion';
 
