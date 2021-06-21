@@ -57,7 +57,7 @@ interface Props {
 
 export const LogoGrid = ({ title, cards }: Props) => {
 	return (
-		<div className={styles.wrapper}>
+		<div className={styles.wrapper} id='work'>
 			<h1 className={styles.groupTitle}>{title}</h1>
 			<LogoCardGroup cards={cards} />
 		</div>

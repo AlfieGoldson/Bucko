@@ -62,6 +62,10 @@ export default function Home({ artworks }: Props) {
 								title: 'TheMegaPixelArt',
 								image: '/work/logos/TheMegaPixelArt.jpg',
 							},
+							{
+								title: 'Mustache',
+								image: '/work/logos/Mustache.jpg',
+							},
 						]}
 					/>
 					<div>
@@ -70,26 +74,29 @@ export default function Home({ artworks }: Props) {
 						))}
 					</div>
 				</Content>
-				<Content>
-					<h2 id='about'>About Us.</h2>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						Cras viverra sit amet eros at vehicula. Aliquam finibus
-						pretium cursus. Ut vulputate, ex ac maximus fermentum,
-						lectus lacus porttitor orci, in feugiat urna dolor ac
-						risus. Ut id quam nec nisi tristique faucibus quis
-						mollis justo. Curabitur facilisis scelerisque posuere.
-						Nullam aliquam, erat nec commodo consequat, elit dolor
-						luctus ex, vel tempor lectus tellus sed diam. Fusce
-						tincidunt neque orci, non efficitur enim rutrum eu. Cras
-						ornare accumsan ipsum in porta.
-					</p>
-				</Content>
-				<div>
+				<div className='lightAltBG'>
+					<Content>
+						<h2 id='about'>About Us.</h2>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing
+							elit. Cras viverra sit amet eros at vehicula.
+							Aliquam finibus pretium cursus. Ut vulputate, ex ac
+							maximus fermentum, lectus lacus porttitor orci, in
+							feugiat urna dolor ac risus. Ut id quam nec nisi
+							tristique faucibus quis mollis justo. Curabitur
+							facilisis scelerisque posuere. Nullam aliquam, erat
+							nec commodo consequat, elit dolor luctus ex, vel
+							tempor lectus tellus sed diam. Fusce tincidunt neque
+							orci, non efficitur enim rutrum eu. Cras ornare
+							accumsan ipsum in porta.
+						</p>
+					</Content>
+				</div>
+				{/* <div>
 					<Content>
 						<ContactForm />
 					</Content>
-				</div>
+				</div> */}
 			</Layout>
 		</>
 	);
