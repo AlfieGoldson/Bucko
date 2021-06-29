@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
-import { getPostBySlug, getAllPosts, IPost } from '@util/api';
+import { getWorkBySlug, getAllWork, IWork } from '@util/api';
 import markdownToHtml from '@util/markdownToHtml';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { Layout } from '@components/Layout';
@@ -10,7 +10,7 @@ import { ParsedUrlQuery } from 'querystring';
 import { motion } from 'framer-motion';
 
 interface Props {
-	post: IPost;
+	post: IWork;
 }
 
 interface StaticParams extends ParsedUrlQuery {
@@ -51,7 +51,7 @@ export default function Post({ post }: Props) {
 export const getStaticProps: GetStaticProps<Props, StaticParams> = async ({
 	params,
 }) => {
-	const post = getPostBySlug(params.slug);
+	const post = getWorkBySlug(params.slug);
 	const content = await markdownToHtml(post.content || '');
 
 	return {
@@ -65,7 +65,7 @@ export const getStaticProps: GetStaticProps<Props, StaticParams> = async ({
 };
 
 export const getStaticPaths: GetStaticPaths<StaticParams> = async () => {
-	const posts = getAllPosts();
+	const posts = getAllWork();
 
 	return {
 		paths: posts.map((post) => {

@@ -1,3 +1,4 @@
+import { Button } from '@components/Button';
 import { useRef, MouseEvent as ReactMouseEvent, useState } from 'react';
 import styles from './LogoGrid.module.scss';
 
@@ -53,13 +54,19 @@ export const LogoCardGroup = ({ cards }: { cards: ILogo[] }) => {
 interface Props {
 	title: string | JSX.Element;
 	cards: ILogo[];
+	cta?: { href: string; title: string };
 }
 
-export const LogoGrid = ({ title, cards }: Props) => {
+export const LogoGrid = ({ title, cards, cta }: Props) => {
 	return (
 		<div className={styles.wrapper} id='work'>
 			<h1 className={styles.groupTitle}>{title}</h1>
 			<LogoCardGroup cards={cards} />
+			{cta && (
+				<div className={styles.cta}>
+					<Button {...cta} />
+				</div>
+			)}
 		</div>
 	);
 };

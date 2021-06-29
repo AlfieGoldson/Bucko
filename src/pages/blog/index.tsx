@@ -1,4 +1,4 @@
-import { getAllPosts, IPost } from '@util/api';
+import { getAllWork, IWork } from '@util/api';
 import { PostThumbnail } from '@components/PostThumbnail';
 
 import styles from '@styles/pages/BlogPage.module.scss';
@@ -8,7 +8,7 @@ import Head from 'next/head';
 import { GetStaticProps } from 'next';
 
 interface Props {
-	posts: IPost[];
+	posts: IWork[];
 }
 
 export default function Blog({ posts }: Props) {
@@ -30,7 +30,7 @@ export default function Blog({ posts }: Props) {
 }
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-	const posts = getAllPosts();
+	const posts = getAllWork();
 
 	return {
 		props: {

@@ -17,7 +17,8 @@
 		height: 100%;
 		width: 100%;
 		object-fit: cover;
-		opacity: 0.04;
+		// opacity: 0.04;
+		opacity: 0.25;
 		pointer-events: none;
 		transition: 0.75s all ease;
 	}
@@ -38,14 +39,14 @@
 	&:hover {
 		.landingImg {
 			transform: scale(1.05);
-			opacity: 0.08;
+			// opacity: 0.75;
 		}
 	}
 }
 
 .landingIcons {
 	display: flex;
-	gap: 2rem;
+	gap: 3rem;
 	justify-content: center;
 	margin-top: 4rem;
 

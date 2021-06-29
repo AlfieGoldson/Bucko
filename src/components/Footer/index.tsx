@@ -8,13 +8,13 @@ export function Footer() {
 			<Link href='/#'>
 				<a>
 					<img
-						src='/logo_footer.png'
+						src='/brand/logo_footer.png'
 						alt='logo'
 						className={styles.footerLogo}
 					/>
 				</a>
 			</Link>
-			<p className={styles.copyright}>COPYRIGHT © 2021 PARO.STUDIO</p>
+			<p className={styles.copyright}>COPYRIGHT © 2021 BUCKO.GRAPHICS</p>
 		</motion.div>
 	);
 }

@@ -11,18 +11,18 @@ function NavLinks() {
 			<Link href='/#'>
 				<a className={styles.navItem}>Home</a>
 			</Link>
-			<Link href='/#work'>
+			<Link href='/work'>
 				<a className={styles.navItem}>Our Work</a>
 			</Link>
 			<Link href='/#about'>
 				<a className={styles.navItem}>About</a>
 			</Link>
-			<Link href='/#contact'>
+			{/* <Link href='/#contact'>
 				<a className={styles.navItem}>Contact</a>
-			</Link>
-			<Link href='/blog'>
+			</Link> */}
+			{/* <Link href='/blog'>
 				<a className={styles.navItem}>Blog</a>
-			</Link>
+			</Link> */}
 		</>
 	);
 }
@@ -44,14 +44,14 @@ export function Header() {
 				<div className={styles.navGroup}>
 					<Link href='/#'>
 						<a className={styles.headerImg}>
-							<img src='/logo.png' alt='logo' />
+							<img src='/brand/logo_header.png' alt='logo' />
 						</a>
 					</Link>
+				</div>
+				<div className={styles.navGroup}>
 					<div className={styles.desktopNavGroup}>
 						<NavLinks />
 					</div>
-				</div>
-				<div className={styles.navGroup}>
 					<AnimatePresence>
 						<motion.a
 							onClick={() => setMobileNavOpened((a) => !a)}

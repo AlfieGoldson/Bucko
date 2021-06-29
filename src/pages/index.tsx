@@ -1,18 +1,18 @@
 import { Landing } from '@components/Landing';
 import Head from 'next/head';
 import { Content } from '@components/Content';
-import styles from '@styles/pages/HomePage.module.scss';
 import { Layout } from '@components/Layout';
-import { ContactForm } from '@components/ContactForm';
-import { getAllPosts, IPost } from '@util/api';
+import { getAllWork, IWork } from '@util/api';
 import { GetStaticProps } from 'next';
 import { LogoGrid } from '@components/LogoGrid';
+import React from 'react';
+import { shuffle } from '@util/shuffle';
 
 interface Props {
-	artworks: IPost[];
+	logos: IWork[];
 }
 
-export default function Home({ artworks }: Props) {
+export default function Home({ logos }: Props) {
 	return (
 		<>
 			<Head>
@@ -33,46 +33,14 @@ export default function Home({ artworks }: Props) {
 								.
 							</>
 						}
-						cards={[
-							{
-								title: 'Corehalla',
-								image: '/work/logos/Corehalla.jpg',
-							},
-							{
-								title: 'Taikiro',
-								image: '/work/logos/Taikiro.jpg',
-							},
-							{
-								title: 'Aerolite',
-								image: '/work/logos/Aerolite.jpg',
-							},
-							{
-								title: 'Bamboo',
-								image: '/work/logos/Bamboo.jpg',
-							},
-							{
-								title: 'Bucko',
-								image: '/work/logos/Bucko.jpg',
-							},
-							{
-								title: 'Ludopod',
-								image: '/work/logos/Ludopod.jpg',
-							},
-							{
-								title: 'TheMegaPixelArt',
-								image: '/work/logos/TheMegaPixelArt.jpg',
-							},
-							{
-								title: 'Mustache',
-								image: '/work/logos/Mustache.jpg',
-							},
-						]}
+						cards={shuffle(logos)
+							.slice(0, 8)
+							.map(({ title, coverImage }) => ({
+								title,
+								image: coverImage,
+							}))}
+						cta={{ href: '/work', title: 'View More!' }}
 					/>
-					<div>
-						{artworks.map((artwork) => (
-							<p key={artwork.slug}>{artwork.title}</p>
-						))}
-					</div>
 				</Content>
 				<div className='lightAltBG'>
 					<Content>
@@ -92,22 +60,17 @@ export default function Home({ artworks }: Props) {
 						</p>
 					</Content>
 				</div>
-				{/* <div>
-					<Content>
-						<ContactForm />
-					</Content>
-				</div> */}
 			</Layout>
 		</>
 	);
 }
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-	const artworks = getAllPosts().filter((p) => p.type === 'Artwork');
+	const logos = getAllWork().filter((p) => p.type === 'Logo');
 
 	return {
 		props: {
-			artworks,
+			logos,
 		},
 	};
 };
