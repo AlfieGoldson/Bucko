@@ -15,4 +15,15 @@ query {
 			}
 		}
 	}
+
+	allClients(first: 8) {
+		edges {
+			node {
+				name
+				picture
+				content
+				date
+			}
+		}
+	}
 }

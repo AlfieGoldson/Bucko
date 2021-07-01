@@ -6,15 +6,17 @@ import { GetServerSideProps } from 'next';
 import { LogoGrid } from '@components/LogoGrid';
 import React from 'react';
 import { shuffle } from '@util/shuffle';
-import { fetchHomeContent } from '@lib/api';
+import { fetchHomeContent, ITestimonial } from '@lib/api';
 import { RichText, RichTextBlock } from 'prismic-reactjs';
+import { Testimonials } from '@components/Testimonials';
 
 interface Props {
 	logos: { title: string; image: string }[];
 	about?: RichTextBlock[];
+	testimonials: ITestimonial[]; // TODO: any
 }
 
-export default function Home({ logos, about }: Props) {
+export default function Home({ logos, about, testimonials }: Props) {
 	return (
 		<>
 			<Head>
@@ -39,11 +41,19 @@ export default function Home({ logos, about }: Props) {
 						cta={{ href: '/work', title: 'View More!' }}
 					/>
 				</Content>
-				<div className='lightAltBG'>
+				<div className='lightBG'>
 					<Content>
 						<h2 id='about'>About Us.</h2>
 						<div>
 							<RichText render={about} />
+						</div>
+					</Content>
+				</div>
+				<div className='lightAltBG'>
+					<Content>
+						<h2 id='testimonials'>They worked with us!</h2>
+						<div>
+							<Testimonials testimonials={testimonials} />
 						</div>
 					</Content>
 				</div>

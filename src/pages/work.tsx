@@ -10,7 +10,6 @@ interface Props {
 }
 
 export default function WorkPage({ artworks }: Props) {
-	console.log(artworks);
 	return (
 		<>
 			<Head>

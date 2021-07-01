@@ -55,7 +55,7 @@ export function Landing() {
 					<br />
 					ideas to life!
 				</h1>
-				<Button href='/#work' title='View Work' />
+				<Button href='/work' title='View Work' />
 				<div className={styles.landingIcons}>
 					{icons.map((icon) => (
 						<LandingIcon {...icon} />

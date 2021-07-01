@@ -1,6 +1,5 @@
 import { PrismicLink } from 'apollo-link-prismic';
 import { ApolloClient, InMemoryCache } from '@apollo/client';
-// import gql from 'graphql-tag';
 import HomeAboutQuery from '@graphql/HomeContent.gql';
 import ArtworksQuery from '@graphql/AllArtworks.gql';
 import { RichText, RichTextBlock } from 'prismic-reactjs';
@@ -23,15 +22,30 @@ interface HomeContentResponse {
 		];
 	};
 	allArtworks: {
-		edges: [
-			{
-				node: {
-					title: RichTextBlock[];
-					thumb: RichTextBlock;
-				};
-			}
-		];
+		edges: {
+			node: {
+				title: RichTextBlock[];
+				thumb: RichTextBlock;
+			};
+		}[];
 	};
+	allClients: {
+		edges: {
+			node: {
+				name: RichTextBlock[];
+				picture: RichTextBlock;
+				content: RichTextBlock[];
+				date: string;
+			};
+		}[];
+	};
+}
+
+export interface ITestimonial {
+	name: string;
+	content: RichTextBlock[];
+	date: string;
+	picture: string;
 }
 
 export const fetchHomeContent = async () => {
@@ -41,12 +55,22 @@ export const fetchHomeContent = async () => {
 		});
 
 		const about = res.data.allHome_abouts.edges[0].node.content;
+
 		const logos = res.data.allArtworks.edges.map(({ node }) => ({
 			title: RichText.asText(node.title),
 			image: node.thumb.url ?? '',
 		}));
 
-		return { about, logos };
+		const testimonials: ITestimonial[] = res.data.allClients.edges.map(
+			({ node }) => ({
+				name: RichText.asText(node.name),
+				content: node.content,
+				date: node.date,
+				picture: node.picture.url ?? '',
+			})
+		);
+
+		return { about, logos, testimonials };
 	} catch (e) {
 		throw e;
 	}
@@ -83,8 +107,6 @@ export const fetchAllArtworks = async () => {
 			thumb: node.thumb.url ?? '',
 			type: node.type,
 		}));
-
-		console.log({ artworks });
 
 		return artworks;
 	} catch (e) {
