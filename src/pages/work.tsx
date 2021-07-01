@@ -1,12 +1,12 @@
 import Head from 'next/head';
-import { getAllWork, IWork } from '@util/api';
-import { GetStaticProps } from 'next';
+import { GetServerSideProps, GetStaticProps } from 'next';
 import { WorkGrid } from '@components/WorkGrid';
 import { Layout } from '@components/Layout';
 import { Content } from '@components/Content';
+import { IArtwork, fetchAllArtworks } from '@lib/api';
 
 interface Props {
-	artworks: IWork[];
+	artworks: IArtwork[];
 }
 
 export default function WorkPage({ artworks }: Props) {
@@ -14,7 +14,7 @@ export default function WorkPage({ artworks }: Props) {
 	return (
 		<>
 			<Head>
-				<title>Home • Paro</title>
+				<title>Home • Bucko</title>
 			</Head>
 			<Layout>
 				<Content>
@@ -25,12 +25,8 @@ export default function WorkPage({ artworks }: Props) {
 	);
 }
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
-	const artworks = getAllWork().filter((p) =>
-		['Artwork', 'Logo', 'TwitchEmote'].includes(p.type)
-	);
-
-	console.log(getAllWork(), artworks);
+export const getServerSideProps: GetServerSideProps<Props> = async () => {
+	const artworks = await fetchAllArtworks();
 
 	return {
 		props: {

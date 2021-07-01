@@ -1,0 +1,11 @@
+query {
+	allArtworks(first: 20, sortBy: date_DESC) {
+		edges {
+			node {
+				title
+				thumb
+				type
+			}
+		}
+	}
+}

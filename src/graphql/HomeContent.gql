@@ -1,0 +1,18 @@
+query {
+	allHome_abouts(uid: null) {
+		edges {
+			node {
+				content
+			}
+		}
+	}
+
+	allArtworks(tags_in: ["Logo"], first: 8) {
+		edges {
+			node {
+				title
+				thumb
+			}
+		}
+	}
+}

@@ -7,7 +7,7 @@ export default function Cart() {
 	return (
 		<Layout>
 			<Head>
-				<title>Cart • Paro</title>
+				<title>Cart • Bucko</title>
 			</Head>
 			<Content>
 				<div className={styles.cart}>Cart</div>

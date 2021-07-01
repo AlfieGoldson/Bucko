@@ -2,21 +2,23 @@ import { Landing } from '@components/Landing';
 import Head from 'next/head';
 import { Content } from '@components/Content';
 import { Layout } from '@components/Layout';
-import { getAllWork, IWork } from '@util/api';
-import { GetStaticProps } from 'next';
+import { GetServerSideProps } from 'next';
 import { LogoGrid } from '@components/LogoGrid';
 import React from 'react';
 import { shuffle } from '@util/shuffle';
+import { fetchHomeContent } from '@lib/api';
+import { RichText, RichTextBlock } from 'prismic-reactjs';
 
 interface Props {
-	logos: IWork[];
+	logos: { title: string; image: string }[];
+	about?: RichTextBlock[];
 }
 
-export default function Home({ logos }: Props) {
+export default function Home({ logos, about }: Props) {
 	return (
 		<>
 			<Head>
-				<title>Home • Paro</title>
+				<title>Home • Bucko</title>
 			</Head>
 			<Layout>
 				<Landing />
@@ -33,31 +35,16 @@ export default function Home({ logos }: Props) {
 								.
 							</>
 						}
-						cards={shuffle(logos)
-							.slice(0, 8)
-							.map(({ title, coverImage }) => ({
-								title,
-								image: coverImage,
-							}))}
+						cards={shuffle(logos).slice(0, 8)}
 						cta={{ href: '/work', title: 'View More!' }}
 					/>
 				</Content>
 				<div className='lightAltBG'>
 					<Content>
 						<h2 id='about'>About Us.</h2>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing
-							elit. Cras viverra sit amet eros at vehicula.
-							Aliquam finibus pretium cursus. Ut vulputate, ex ac
-							maximus fermentum, lectus lacus porttitor orci, in
-							feugiat urna dolor ac risus. Ut id quam nec nisi
-							tristique faucibus quis mollis justo. Curabitur
-							facilisis scelerisque posuere. Nullam aliquam, erat
-							nec commodo consequat, elit dolor luctus ex, vel
-							tempor lectus tellus sed diam. Fusce tincidunt neque
-							orci, non efficitur enim rutrum eu. Cras ornare
-							accumsan ipsum in porta.
-						</p>
+						<div>
+							<RichText render={about} />
+						</div>
 					</Content>
 				</div>
 			</Layout>
@@ -65,12 +52,18 @@ export default function Home({ logos }: Props) {
 	);
 }
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
-	const logos = getAllWork().filter((p) => p.type === 'Logo');
+export const getServerSideProps: GetServerSideProps<Props> = async () => {
+	// const logos = getAllWork().filter((p) => p.type === 'Logo');
 
-	return {
-		props: {
-			logos,
-		},
-	};
+	try {
+		const homeContent = await fetchHomeContent();
+
+		return {
+			props: {
+				...homeContent,
+			},
+		};
+	} catch (e) {
+		throw e;
+	}
 };

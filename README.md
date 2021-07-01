@@ -1,6 +1,6 @@
-# Paro
+# Bucko
 
-[paro.studio](https://paro.studio)
+[Bucko.studio](https://Bucko.studio)
 
 ## Stack
 
