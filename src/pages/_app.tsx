@@ -1,8 +1,8 @@
 import '@styles/main.scss';
 import type { AppProps } from 'next/app';
-import { AnimateSharedLayout, motion } from 'framer-motion';
+import { AnimateSharedLayout } from 'framer-motion';
 
-function MyApp({ Component, pageProps, router }: AppProps) {
+function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<AnimateSharedLayout>
 			<Component {...pageProps} />

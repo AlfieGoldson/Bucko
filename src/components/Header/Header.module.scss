@@ -51,6 +51,11 @@
 		opacity: 1;
 	}
 
+	&.active {
+		font-weight: bold;
+		opacity: 1;
+	}
+
 	svg {
 		fill: transparent;
 		stroke: $light;

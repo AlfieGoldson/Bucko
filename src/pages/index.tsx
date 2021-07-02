@@ -20,7 +20,7 @@ export default function Home({ logos, about, testimonials }: Props) {
 	return (
 		<>
 			<Head>
-				<title>Home • Bucko</title>
+				<title>Accueil • Bucko</title>
 			</Head>
 			<Layout>
 				<Landing />
@@ -28,13 +28,12 @@ export default function Home({ logos, about, testimonials }: Props) {
 					<LogoGrid
 						title={
 							<>
-								Designed
+								Conçu
 								<br />
-								with{' '}
+								avec{' '}
 								<span role='img' aria-label='heart emoji'>
-									❤️
+									du ❤️
 								</span>
-								.
 							</>
 						}
 						cards={shuffle(logos).slice(0, 8)}

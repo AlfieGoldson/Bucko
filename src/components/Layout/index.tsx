@@ -20,10 +20,16 @@ export function Layout({ children }: PropsWithChildren<Props>) {
 				variants={{
 					pageInitial: {
 						opacity: 0,
+						y: 100,
 					},
 					pageAnimate: {
 						opacity: 1,
+						y: 0,
 					},
+				}}
+				transition={{
+					duration: 0.5,
+					ease: 'easeOut',
 				}}
 			>
 				{children}

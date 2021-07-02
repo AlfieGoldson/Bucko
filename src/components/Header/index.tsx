@@ -1,41 +1,37 @@
 import styles from './Header.module.scss';
 import Link from 'next/link';
 import { useState } from 'react';
-import { usePopper } from 'react-popper';
 import { MobileNav } from '@components/MobileNav';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useRouter } from 'next/router';
 
-function NavLinks() {
+const NavLinks = () => {
+	const router = useRouter();
+
+	const navLinks = [
+		{ name: 'Home', href: '/' },
+		{ name: 'Our Work', href: '/work' },
+		{ name: 'About', href: '/#about' }, //TODO: /about page
+	];
+
 	return (
 		<>
-			<Link href='/#'>
-				<a className={styles.navItem}>Home</a>
-			</Link>
-			<Link href='/work'>
-				<a className={styles.navItem}>Our Work</a>
-			</Link>
-			<Link href='/#about'>
-				<a className={styles.navItem}>About</a>
-			</Link>
-			{/* <Link href='/#contact'>
-				<a className={styles.navItem}>Contact</a>
-			</Link> */}
-			{/* <Link href='/blog'>
-				<a className={styles.navItem}>Blog</a>
-			</Link> */}
+			{navLinks.map(({ name, href }) => (
+				<Link href={href}>
+					<a
+						className={`${styles.navItem} ${
+							router.pathname === href ? styles.active : ''
+						}`}
+					>
+						{name}
+					</a>
+				</Link>
+			))}
 		</>
 	);
-}
+};
 
-export function Header() {
-	// const [dropdownOpened, setDropdownOpened] = useState(false);
-	// const [buttonRef, setButtonRef] = useState(null);
-	// const [dropdownRef, setDropdownRef] = useState(null);
-	// const { styles: popperStyles, attributes } = usePopper(
-	// 	buttonRef,
-	// 	dropdownRef
-	// );
-
+export const Header = () => {
 	const [mobileNavOpened, setMobileNavOpened] = useState(false);
 
 	return (
@@ -143,4 +139,4 @@ export function Header() {
 			)}
 		</div>
 	);
-}
+};
