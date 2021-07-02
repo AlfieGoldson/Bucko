@@ -28,11 +28,11 @@ export default function Home({ logos, about, testimonials }: Props) {
 					<LogoGrid
 						title={
 							<>
-								Conçu
+								Designed
 								<br />
-								avec{' '}
+								with{' '}
 								<span role='img' aria-label='heart emoji'>
-									du ❤️
+									❤️.
 								</span>
 							</>
 						}
