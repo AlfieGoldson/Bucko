@@ -9,9 +9,9 @@ const NavLinks = () => {
 	const router = useRouter();
 
 	const navLinks = [
-		{ name: 'Home', href: '/' },
-		{ name: 'Our Work', href: '/work' },
-		{ name: 'About', href: '/#about' }, //TODO: /about page
+		{ name: 'Accueil', href: '/' },
+		{ name: 'Travaux', href: '/work' },
+		{ name: 'À Propos', href: '/#about' }, //TODO: /about page
 	];
 
 	return (
@@ -27,6 +27,11 @@ const NavLinks = () => {
 					</a>
 				</Link>
 			))}
+			<Link href='/#'>
+				<a className={`${styles.navItem} ${styles.cta}`}>
+					Nous Contacter
+				</a>
+			</Link>
 		</>
 	);
 };

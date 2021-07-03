@@ -1,21 +1,17 @@
 import { Button } from '@components/Button';
+import { IArtwork } from '@lib/api';
 import { useRef, MouseEvent as ReactMouseEvent, useState } from 'react';
 import styles from './LogoGrid.module.scss';
 
-interface ILogo {
-	title: string;
-	image: string;
-}
-
-const LogoCard = ({ title, image }: ILogo) => {
+const LogoCard = ({ title, thumb }: IArtwork) => {
 	return (
 		<div className={styles.card}>
-			<img className={styles.thumb} src={image} alt={title} />
+			<img className={styles.thumb} src={thumb} alt={title} />
 		</div>
 	);
 };
 
-export const LogoCardGroup = ({ cards }: { cards: ILogo[] }) => {
+export const LogoCardGroup = ({ logos }: { logos: IArtwork[] }) => {
 	const ref = useRef<HTMLDivElement>(null);
 	const [maskPosition, setMaskPosition] = useState({ x: 50, y: 50 });
 
@@ -44,7 +40,7 @@ export const LogoCardGroup = ({ cards }: { cards: ILogo[] }) => {
 				transform: `perspective(120px) rotateY(-4deg) translateX(${maskPosition.x}px)`,
 			}}
 		>
-			{cards.map((card, i) => (
+			{logos.map((card, i) => (
 				<LogoCard {...card} key={i} />
 			))}
 		</div>
@@ -53,15 +49,15 @@ export const LogoCardGroup = ({ cards }: { cards: ILogo[] }) => {
 
 interface Props {
 	title: string | JSX.Element;
-	cards: ILogo[];
+	logos: IArtwork[];
 	cta?: { href: string; title: string };
 }
 
-export const LogoGrid = ({ title, cards, cta }: Props) => {
+export const LogoGrid = ({ title, logos, cta }: Props) => {
 	return (
 		<div className={styles.wrapper} id='work'>
 			<h1 className={styles.groupTitle}>{title}</h1>
-			<LogoCardGroup cards={cards} />
+			<LogoCardGroup logos={logos} />
 			{cta && (
 				<div className={styles.cta}>
 					<Button {...cta} />

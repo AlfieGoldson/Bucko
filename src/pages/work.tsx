@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { GetServerSideProps, GetStaticProps } from 'next';
+import { GetStaticProps } from 'next';
 import { WorkGrid } from '@components/WorkGrid';
 import { Layout } from '@components/Layout';
 import { Content } from '@components/Content';
@@ -24,7 +24,7 @@ export default function WorkPage({ artworks }: Props) {
 	);
 }
 
-export const getServerSideProps: GetServerSideProps<Props> = async () => {
+export const getStaticProps: GetStaticProps<Props> = async () => {
 	const artworks = await fetchAllArtworks();
 
 	return {

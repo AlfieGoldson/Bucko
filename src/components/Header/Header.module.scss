@@ -56,6 +56,19 @@
 		opacity: 1;
 	}
 
+	&.cta {
+		background-color: $accent;
+		opacity: 1;
+		padding: 0.5rem 1rem;
+		border-radius: 0.25rem;
+		transition: 0.15s all ease;
+
+		&:hover {
+			background-color: $light;
+			color: $dark;
+		}
+	}
+
 	svg {
 		fill: transparent;
 		stroke: $light;

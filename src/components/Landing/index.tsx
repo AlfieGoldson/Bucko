@@ -51,11 +51,11 @@ export function Landing() {
 		<div className={styles.landing}>
 			<div className={styles.container}>
 				<h1>
-					Bring <span className={styles.accent}>your</span>
-					<br />
-					ideas to life!
+					On prend soin
+					<br /> de<span className={styles.accent}> votre </span>
+					image!
 				</h1>
-				<Button href='/work' title='View Work' />
+				<Button href='/work' title='Voir Notre Travail' />
 				<div className={styles.landingIcons}>
 					{icons.map((icon) => (
 						<LandingIcon {...icon} />

@@ -48,7 +48,11 @@ export interface ITestimonial {
 	picture: string;
 }
 
-export const fetchHomeContent = async () => {
+export const fetchHomeContent = async (): Promise<{
+	about: RichTextBlock[];
+	logos: IArtwork[];
+	testimonials: ITestimonial[];
+}> => {
 	try {
 		const res = await client.query<HomeContentResponse>({
 			query: HomeAboutQuery,
@@ -56,10 +60,13 @@ export const fetchHomeContent = async () => {
 
 		const about = res.data.allHome_abouts.edges[0].node.content;
 
-		const logos = res.data.allArtworks.edges.map(({ node }) => ({
-			title: RichText.asText(node.title),
-			image: node.thumb.url ?? '',
-		}));
+		const logos: IArtwork[] = res.data.allArtworks.edges.map(
+			({ node }) => ({
+				title: RichText.asText(node.title),
+				thumb: node.thumb.url ?? '',
+				type: 'Logo',
+			})
+		);
 
 		const testimonials: ITestimonial[] = res.data.allClients.edges.map(
 			({ node }) => ({
