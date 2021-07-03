@@ -51,7 +51,7 @@ export function Landing() {
 		<div className={styles.landing}>
 			<div className={styles.container}>
 				<h1>
-					On prend soin
+					Nous prenons soin
 					<br /> de<span className={styles.accent}> votre </span>
 					image!
 				</h1>
