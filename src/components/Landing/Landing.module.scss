@@ -42,18 +42,4 @@
 	gap: 3rem;
 	justify-content: center;
 	margin-top: 4rem;
-
-	.landingIcon {
-		svg {
-			fill: $light;
-			width: 2rem;
-			height: 2rem;
-		}
-
-		&:hover {
-			svg {
-				fill: $accent;
-			}
-		}
-	}
 }

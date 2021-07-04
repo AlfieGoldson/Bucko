@@ -1,0 +1,15 @@
+@import '@styles/theme.scss';
+
+.landingIcon {
+	svg {
+		fill: $light;
+		width: 2rem;
+		height: 2rem;
+	}
+
+	&:hover {
+		svg {
+			fill: $accent;
+		}
+	}
+}

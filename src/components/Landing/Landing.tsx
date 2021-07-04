@@ -1,21 +1,8 @@
 import styles from './Landing.module.scss';
 import { Button } from '@components/Button';
+import { Props as Icon, LandingIcon } from './LandingIcon';
 
-interface IIcon {
-	name: string;
-	icon: JSX.Element;
-	href: string;
-}
-
-const LandingIcon = ({ icon, href }: IIcon) => {
-	return (
-		<a className={styles.landingIcon} href={href} target='_blank'>
-			{icon}
-		</a>
-	);
-};
-
-const icons: IIcon[] = [
+const icons: Icon[] = [
 	{
 		name: 'Twitter',
 		icon: (
