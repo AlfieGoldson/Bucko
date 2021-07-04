@@ -3,11 +3,11 @@ import { Layout } from '@components/Layout';
 import styles from '@styles/pages/CartPage.module.scss';
 import Head from 'next/head';
 
-export default function Cart() {
+export default function CartPage() {
 	return (
 		<Layout>
 			<Head>
-				<title>Cart • Bucko</title>
+				<title>Panier • Bucko</title>
 			</Head>
 			<Content>
 				<div className={styles.cart}>Cart</div>

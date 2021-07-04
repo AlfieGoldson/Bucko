@@ -1,4 +1,4 @@
-import { IArtwork } from '@lib/api';
+import { IArtwork } from '@lib/api/types';
 import styles from './ImageSlider.module.scss';
 
 interface Props {

@@ -1,5 +1,5 @@
 import styles from './Testimonials.module.scss';
-import { ITestimonial } from '@lib/api';
+import { ITestimonial } from '@lib/api/types';
 import { RichText } from 'prismic-reactjs';
 
 export const Testimonial = ({ name, content, date, picture }: ITestimonial) => {

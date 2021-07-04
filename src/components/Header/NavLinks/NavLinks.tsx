@@ -8,7 +8,7 @@ export const NavLinks = () => {
 	const navLinks = [
 		{ name: 'Accueil', href: '/' },
 		{ name: 'Travaux', href: '/work' },
-		{ name: 'À Propos', href: '/#about' }, //TODO: /about page
+		{ name: 'À Propos', href: '/about' },
 	];
 
 	return (

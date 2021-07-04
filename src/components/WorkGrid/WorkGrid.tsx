@@ -1,5 +1,5 @@
-import { IArtwork } from '@lib/api';
-import { shuffle } from '@util/shuffle';
+import { IArtwork } from '@lib/api/types';
+import { shuffle } from '@lib/util/shuffle';
 import { motion } from 'framer-motion';
 import styles from './WorkGrid.module.scss';
 

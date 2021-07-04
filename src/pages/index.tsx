@@ -3,7 +3,8 @@ import Head from 'next/head';
 import { Content } from '@components/Content';
 import { Layout } from '@components/Layout';
 import { GetStaticProps } from 'next';
-import { fetchHomeContent, IArtwork, ITestimonial } from '@lib/api';
+import { fetchHomeContent } from '@lib/api';
+import { IArtwork, ITestimonial } from '@lib/api/types';
 import { RichText, RichTextBlock } from 'prismic-reactjs';
 import { Testimonials } from '@components/Testimonials';
 import { ImageSlider } from '@components/ImageSlider';
@@ -15,7 +16,7 @@ interface Props {
 	testimonials: ITestimonial[];
 }
 
-export default function Home({ logos, about, testimonials }: Props) {
+export default function HomePage({ logos, about, testimonials }: Props) {
 	return (
 		<>
 			<Head>

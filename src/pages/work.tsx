@@ -3,7 +3,8 @@ import { GetStaticProps } from 'next';
 import { WorkGrid } from '@components/WorkGrid';
 import { Layout } from '@components/Layout';
 import { Content } from '@components/Content';
-import { IArtwork, fetchAllArtworks } from '@lib/api';
+import { fetchAllArtworks } from '@lib/api';
+import { IArtwork } from '@lib/api/types';
 
 interface Props {
 	artworks: IArtwork[];
@@ -13,7 +14,7 @@ export default function WorkPage({ artworks }: Props) {
 	return (
 		<>
 			<Head>
-				<title>Home • Bucko</title>
+				<title>Travaux • Bucko</title>
 			</Head>
 			<Layout>
 				<Content>
