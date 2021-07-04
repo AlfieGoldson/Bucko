@@ -3,19 +3,16 @@ import Head from 'next/head';
 import { Content } from '@components/Content';
 import { Layout } from '@components/Layout';
 import { GetStaticProps } from 'next';
-import { LogoGrid } from '@components/LogoGrid';
-import { shuffle } from '@util/shuffle';
 import { fetchHomeContent, IArtwork, ITestimonial } from '@lib/api';
 import { RichText, RichTextBlock } from 'prismic-reactjs';
 import { Testimonials } from '@components/Testimonials';
 import { ImageSlider } from '@components/ImageSlider';
-import { Button } from '@components/Button';
 import { ServiceCardGrid } from '@components/ServiceCardGrid';
 
 interface Props {
 	logos: IArtwork[];
 	about?: RichTextBlock[];
-	testimonials: ITestimonial[]; // TODO: any
+	testimonials: ITestimonial[];
 }
 
 export default function Home({ logos, about, testimonials }: Props) {
@@ -57,26 +54,9 @@ export default function Home({ logos, about, testimonials }: Props) {
 								},
 							]}
 						/>
-						{/* <Button title='View More!' href='/work' /> */}
 					</Content>
 					<ImageSlider images={logos} />
 				</div>
-				{/* <Content>
-					<LogoGrid
-						title={
-							<>
-								Designed
-								<br />
-								with{' '}
-								<span role='img' aria-label='heart emoji'>
-									❤️.
-								</span>
-							</>
-						}
-						logos={shuffle(logos).slice(0, 8)}
-						cta={{ href: '/work', title: 'View More!' }}
-					/>
-				</Content> */}
 				<div className='lightBG'>
 					<Content>
 						<h2 id='about'>Qui sommes nous?</h2>
