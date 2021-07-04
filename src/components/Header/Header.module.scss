@@ -39,53 +39,6 @@
 	height: 100%;
 }
 
-.navItem,
-.mobileNavBtn {
-	font-weight: 500;
-	opacity: 0.72;
-	cursor: pointer;
-	color: $light;
-	position: relative;
-
-	&:hover {
-		opacity: 1;
-	}
-
-	&.active {
-		font-weight: bold;
-		opacity: 1;
-	}
-
-	&.cta {
-		background-color: $accent;
-		opacity: 1;
-		padding: 0.5rem 1rem;
-		border-radius: 0.25rem;
-		transition: 0.15s all ease;
-
-		&:hover {
-			background-color: $light;
-			color: $dark;
-		}
-	}
-
-	svg {
-		fill: transparent;
-		stroke: $light;
-		stroke-width: 0.25rem;
-		width: 2rem;
-		height: 2rem;
-	}
-}
-
-.mobileNavBtn {
-	display: block;
-
-	@media only screen and (min-width: 960px) {
-		display: none;
-	}
-}
-
 .languageDropdown {
 	position: absolute;
 
