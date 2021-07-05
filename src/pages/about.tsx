@@ -1,3 +1,4 @@
+import { AboutProfile } from '@components/AboutProfile';
 import { Content } from '@components/Content';
 import { Layout } from '@components/Layout';
 import { fetchAboutContent } from '@lib/api';
@@ -18,18 +19,10 @@ export default function AboutPage({ members }: Props) {
 				<title>À Propos • Bucko</title>
 			</Head>
 			<Content>
-				{members.map(
-					({ name, title, description, picture, socials }) => (
-						<div>
-							<h3>
-								{name} • {title}
-							</h3>
-							<p>
-								<RichText render={description} />
-							</p>
-						</div>
-					)
-				)}
+				<h2>Notre Équipe.</h2>
+				{members.map((member) => (
+					<AboutProfile {...member} />
+				))}
 			</Content>
 		</Layout>
 	);

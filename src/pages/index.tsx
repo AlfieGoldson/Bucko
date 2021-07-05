@@ -9,6 +9,7 @@ import { RichText, RichTextBlock } from 'prismic-reactjs';
 import { Testimonials } from '@components/Testimonials';
 import { ImageSlider } from '@components/ImageSlider';
 import { ServiceCardGrid } from '@components/ServiceCardGrid';
+import { Button } from '@components/Button';
 
 interface Props {
 	logos: IArtwork[];
