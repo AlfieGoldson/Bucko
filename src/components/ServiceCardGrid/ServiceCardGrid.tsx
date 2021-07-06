@@ -1,8 +1,9 @@
 import styles from './ServiceCardGrid.module.scss';
-import { Props as Service, ServiceCard } from './ServiceCard';
+import { ServiceCard } from './ServiceCard';
+import { IService } from '@lib/api/types';
 
 interface Props {
-    services: Service[];
+    services: IService[];
 }
 
 export const ServiceCardGrid = ({ services }: Props): JSX.Element => {

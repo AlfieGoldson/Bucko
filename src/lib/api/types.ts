@@ -32,3 +32,9 @@ export interface ITeamMember {
         link: string;
     }[];
 }
+
+export interface IService {
+    title: string;
+    icon: string;
+    content: RichTextBlock[];
+}

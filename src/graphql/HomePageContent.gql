@@ -1,0 +1,34 @@
+query ($lang: String!) {
+    homepage(uid: "main", lang: $lang) {
+        herotitle
+        herodescription
+        about
+        services {
+            service {
+                ... on Service {
+                    title
+                    icon
+                    content
+                }
+            }
+        }
+        logos {
+            logo {
+                ... on Artwork {
+                    title
+                    thumb
+                }
+            }
+        }
+        testimonials {
+            client {
+                ... on Client {
+                    name
+                    picture
+                    date
+                    content
+                }
+            }
+        }
+    }
+}

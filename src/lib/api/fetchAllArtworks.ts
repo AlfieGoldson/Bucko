@@ -1,9 +1,9 @@
-import { ApolloClient, NormalizedCacheObject } from '@apollo/client';
-import ArtworksQuery from '@graphql/AllArtworks.gql';
+import Query from '@graphql/AllArtworks.gql';
 import { RichText, RichTextBlock } from 'prismic-reactjs';
+import { createQuery } from './createQuery';
 import { IArtwork } from './types';
 
-interface ArtworksQueryResponse {
+interface QueryResponse {
     allArtworks: {
         edges: [
             {
@@ -17,24 +17,14 @@ interface ArtworksQueryResponse {
     };
 }
 
-export const fetchAllArtworks =
-    (client: ApolloClient<NormalizedCacheObject>) =>
-    async (): Promise<IArtwork[]> => {
-        try {
-            const res = await client.query<ArtworksQueryResponse>({
-                query: ArtworksQuery,
-            });
+export const fetchAllArtworks = async (): Promise<IArtwork[]> => {
+    const { allArtworks } = await createQuery<QueryResponse>(Query);
 
-            const artworks: IArtwork[] = res.data.allArtworks.edges.map(
-                ({ node }) => ({
-                    title: RichText.asText(node.title),
-                    thumb: node.thumb.url ?? '',
-                    type: node.type,
-                }),
-            );
+    const artworks: IArtwork[] = allArtworks.edges.map(({ node }) => ({
+        title: RichText.asText(node.title),
+        thumb: node.thumb.url ?? '',
+        type: node.type,
+    }));
 
-            return artworks;
-        } catch (e) {
-            throw e;
-        }
-    };
+    return artworks;
+};
