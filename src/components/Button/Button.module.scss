@@ -16,4 +16,9 @@
 		background-color: $dark;
 		border: 1px solid $accent;
 	}
+
+	&.hollow {
+		border: 1px solid $light;
+		background-color: transparent;
+	}
 }

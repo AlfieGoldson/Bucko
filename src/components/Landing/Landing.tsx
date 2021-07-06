@@ -1,6 +1,7 @@
 import styles from './Landing.module.scss';
 import { Button } from '@components/Button';
 import { Props as Icon, LandingIcon } from './LandingIcon';
+import { Wave } from '@components/Wave';
 
 const icons: Icon[] = [
 	{
@@ -35,25 +36,28 @@ const icons: Icon[] = [
 
 export const Landing = () => {
 	return (
-		<div className={styles.landing}>
-			<div className={styles.container}>
-				<h1>
-					Nous prenons soin
-					<br /> de<span className={styles.accent}> votre </span>
-					image!
-				</h1>
-				<Button href='/work' title='Voir Notre Travail' />
-				<div className={styles.landingIcons}>
-					{icons.map((icon) => (
-						<LandingIcon {...icon} />
-					))}
+		<>
+			<div className={styles.landing}>
+				<div className={styles.container}>
+					<h1>
+						Nous prenons soin
+						<br /> de<span className={styles.accent}> votre </span>
+						image!
+					</h1>
+					<Button href='/work' title='Voir Notre Travail' />
+					<div className={styles.landingIcons}>
+						{icons.map((icon) => (
+							<LandingIcon {...icon} />
+						))}
+					</div>
 				</div>
+				<img
+					src='/landing_logos.jpg'
+					alt='landing'
+					className={styles.landingImg}
+				/>
+				<Wave />
 			</div>
-			<img
-				src='/landing_logos.jpg'
-				alt='landing'
-				className={styles.landingImg}
-			/>
-		</div>
+		</>
 	);
 };
