@@ -1,77 +1,77 @@
 @import '@styles/theme.scss';
 
 .contactForm {
-	position: relative;
-	margin-top: 8rem;
-	margin-bottom: 2rem;
-	padding: 1.5rem;
-	padding-bottom: 4rem;
-	background-color: $dark;
-	box-shadow: 0 0 16px rgba($darker, 0.16);
-	z-index: 20;
-	color: $light;
+    position: relative;
+    margin-top: 8rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    padding-bottom: 4rem;
+    background-color: $dark;
+    box-shadow: 0 0 16px rgba($darker, 0.16);
+    z-index: 20;
+    color: $light;
 
-	@media only screen and (min-width: 960px) {
-		padding: 4rem;
-	}
+    @media only screen and (min-width: 960px) {
+        padding: 4rem;
+    }
 
-	.formTitle {
-		color: $accent;
-		padding: 0;
-	}
+    .formTitle {
+        color: $accent;
+        padding: 0;
+    }
 
-	.formSubtitle {
-		font-size: 1.5rem;
-	}
+    .formSubtitle {
+        font-size: 1.5rem;
+    }
 
-	.form {
-		margin-top: 4rem;
-		.userInfo {
-			width: 100%;
-			display: flex;
-			flex-direction: column;
-			gap: 2rem;
-			margin-bottom: 2rem;
+    .form {
+        margin-top: 4rem;
+        .userInfo {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-bottom: 2rem;
 
-			@media only screen and (min-width: 960px) {
-				flex-direction: row;
-			}
-		}
+            @media only screen and (min-width: 960px) {
+                flex-direction: row;
+            }
+        }
 
-		.formLabel {
-			position: relative;
-			flex: 1;
+        .formLabel {
+            position: relative;
+            flex: 1;
 
-			.labelText {
-				opacity: 0.72;
-				display: block;
-				margin-bottom: 1rem;
-			}
+            .labelText {
+                opacity: 0.72;
+                display: block;
+                margin-bottom: 1rem;
+            }
 
-			input,
-			textarea {
-				width: 100%;
-				padding: 0.75rem 1rem;
-				background-color: $darker;
-				color: $light;
-				font-family: 'Montserrat', sans-serif;
-				font-size: 1rem;
-				font-weight: normal;
-			}
+            input,
+            textarea {
+                width: 100%;
+                padding: 0.75rem 1rem;
+                background-color: $darker;
+                color: $light;
+                font-family: 'Montserrat', sans-serif;
+                font-size: 1rem;
+                font-weight: normal;
+            }
 
-			textarea {
-				resize: vertical;
-			}
+            textarea {
+                resize: vertical;
+            }
 
-			&::after {
-				content: '';
-				position: absolute;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				height: 2px;
-				background-color: $accent;
-			}
-		}
-	}
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: 2px;
+                background-color: $accent;
+            }
+        }
+    }
 }

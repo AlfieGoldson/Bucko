@@ -1,29 +1,29 @@
 query {
-	allHome_abouts(uid: null) {
-		edges {
-			node {
-				content
-			}
-		}
-	}
+    allHome_abouts(uid: null) {
+        edges {
+            node {
+                content
+            }
+        }
+    }
 
-	allArtworks(tags_in: ["Logo"], first: 8) {
-		edges {
-			node {
-				title
-				thumb
-			}
-		}
-	}
+    allArtworks(tags_in: ["Logo"], first: 8) {
+        edges {
+            node {
+                title
+                thumb
+            }
+        }
+    }
 
-	allClients(first: 8) {
-		edges {
-			node {
-				name
-				picture
-				content
-				date
-			}
-		}
-	}
+    allClients(first: 8) {
+        edges {
+            node {
+                name
+                picture
+                content
+                date
+            }
+        }
+    }
 }

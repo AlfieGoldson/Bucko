@@ -1,28 +1,28 @@
 @import './theme.scss';
 
 * {
-	margin: 0;
-	padding: 0;
-	border: none;
-	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
 }
 
 html {
-	scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-	background-color: $light-alt;
-	font-family: 'Montserrat', sans-serif;
-	font-weight: 500;
-	overflow-y: scroll;
+    background-color: $light-alt;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    overflow-y: scroll;
 }
 
 p {
-	line-height: 2rem;
+    line-height: 2rem;
 }
 
 a,
 a:visited {
-	text-decoration: none;
+    text-decoration: none;
 }

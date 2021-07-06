@@ -1,18 +1,18 @@
 @import '@styles/theme.scss';
 
 .footer {
-	background-color: $dark;
-	padding: 5rem;
-	text-align: center;
-	color: $light;
+    background-color: $dark;
+    padding: 5rem;
+    text-align: center;
+    color: $light;
 
-	.footerLogo {
-		opacity: 0.72;
-	}
+    .footerLogo {
+        opacity: 0.72;
+    }
 
-	.copyright {
-		margin-top: 1rem;
-		opacity: 0.72;
-		font-size: 1.25;
-	}
+    .copyright {
+        margin-top: 1rem;
+        opacity: 0.72;
+        font-size: 1.25;
+    }
 }

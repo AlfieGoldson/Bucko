@@ -1,24 +1,24 @@
 @import '@styles/theme.scss';
 
 .button {
-	padding: 1rem 2rem;
-	background-color: $accent;
-	text-transform: uppercase;
-	color: $light;
-	transition: 0.5s all ease;
-	border: 1px solid transparent;
-	border-radius: 0.25rem;
-	// box-shadow: 0 0 1rem rgba($darker, 0.48);
-	display: inline-block;
+    padding: 1rem 2rem;
+    background-color: $accent;
+    text-transform: uppercase;
+    color: $light;
+    transition: 0.5s all ease;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    // box-shadow: 0 0 1rem rgba($darker, 0.48);
+    display: inline-block;
 
-	&:hover {
-		border-radius: 0.5rem;
-		background-color: $dark;
-		border: 1px solid $accent;
-	}
+    &:hover {
+        border-radius: 0.5rem;
+        background-color: $dark;
+        border: 1px solid $accent;
+    }
 
-	&.hollow {
-		border: 1px solid $light;
-		background-color: transparent;
-	}
+    &.hollow {
+        border: 1px solid $light;
+        background-color: transparent;
+    }
 }

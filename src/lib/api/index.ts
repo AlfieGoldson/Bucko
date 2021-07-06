@@ -5,10 +5,10 @@ import { fetchAllArtworks as allArtworks } from './fetchAllArtworks';
 import { fetchAboutContent as aboutContent } from './fetchAboutContent';
 
 const client = new ApolloClient({
-	link: PrismicLink({
-		uri: process.env.PRISMIC_URI,
-	}),
-	cache: new InMemoryCache(),
+    link: PrismicLink({
+        uri: process.env.PRISMIC_URI,
+    }),
+    cache: new InMemoryCache(),
 });
 
 export const fetchHomeContent = homeContent(client);

@@ -1,35 +1,35 @@
 @import '@styles/theme.scss';
 
 .testimonials {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-	gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    gap: 2rem;
 
-	.testimonial {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		padding: 1rem;
-		background-color: $light;
-		border-radius: 0.5rem;
-		box-shadow: 0 0 0.5rem rgba($darker, 0.16);
+    .testimonial {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 1rem;
+        background-color: $light;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 0.5rem rgba($darker, 0.16);
 
-		.meta {
-			font-size: 0.75rem;
-			display: flex;
-			align-items: center;
-			border-top: 1px solid $light-alt;
-			margin-top: 1rem;
-			padding-top: 1rem;
+        .meta {
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            border-top: 1px solid $light-alt;
+            margin-top: 1rem;
+            padding-top: 1rem;
 
-			.picture {
-				margin-right: 0.5rem;
-				width: 2rem;
-				height: 2rem;
-				object-fit: cover;
-				object-position: center;
-				border-radius: 50%;
-			}
-		}
-	}
+            .picture {
+                margin-right: 0.5rem;
+                width: 2rem;
+                height: 2rem;
+                object-fit: cover;
+                object-position: center;
+                border-radius: 50%;
+            }
+        }
+    }
 }

@@ -1,10 +1,10 @@
-import { PropsWithChildren, ReactNode } from 'react';
+import { ReactNode } from 'react';
 import styles from './Content.module.scss';
 
 interface Props {
-	children: ReactNode;
+    children: ReactNode;
 }
 
-export const Content = ({ children }: Props) => {
-	return <div className={styles.content}>{children}</div>;
+export const Content = ({ children }: Props): JSX.Element => {
+    return <div className={styles.content}>{children}</div>;
 };

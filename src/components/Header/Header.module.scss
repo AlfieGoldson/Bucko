@@ -1,61 +1,61 @@
 @import '@styles/theme.scss';
 
 .header {
-	height: 4rem;
-	background-color: $dark;
-	position: sticky;
-	top: 0;
-	z-index: 100;
-	border-bottom: 1px solid $border;
+    height: 4rem;
+    background-color: $dark;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid $border;
 }
 
 .container {
-	max-width: 1200px;
-	margin: 0 auto;
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 0 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
 
-	.navGroup,
-	.desktopNavGroup {
-		display: flex;
-		align-items: center;
-		gap: 2.5rem;
-	}
+    .navGroup,
+    .desktopNavGroup {
+        display: flex;
+        align-items: center;
+        gap: 2.5rem;
+    }
 
-	.desktopNavGroup {
-		display: none;
+    .desktopNavGroup {
+        display: none;
 
-		@media only screen and (min-width: 960px) {
-			display: flex;
-		}
-	}
+        @media only screen and (min-width: 960px) {
+            display: flex;
+        }
+    }
 }
 
 .headerImg {
-	cursor: pointer;
-	height: 100%;
+    cursor: pointer;
+    height: 100%;
 }
 
 .languageDropdown {
-	position: absolute;
+    position: absolute;
 
-	& > div {
-		z-index: 101;
-		cursor: initial;
-		margin-top: 2rem;
-		display: flex;
-		background-color: $dark;
-		padding: 1rem 2rem;
-		border: 1px solid $border;
-		flex-direction: column;
-		gap: 1rem;
+    & > div {
+        z-index: 101;
+        cursor: initial;
+        margin-top: 2rem;
+        display: flex;
+        background-color: $dark;
+        padding: 1rem 2rem;
+        border: 1px solid $border;
+        flex-direction: column;
+        gap: 1rem;
 
-		a {
-			cursor: pointer;
-			color: $light;
-		}
-	}
+        a {
+            cursor: pointer;
+            color: $light;
+        }
+    }
 }

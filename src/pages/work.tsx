@@ -7,31 +7,31 @@ import { fetchAllArtworks } from '@lib/api';
 import { IArtwork } from '@lib/api/types';
 
 interface Props {
-	artworks: IArtwork[];
+    artworks: IArtwork[];
 }
 
-export default function WorkPage({ artworks }: Props) {
-	return (
-		<>
-			<Head>
-				<title>Travaux • Bucko</title>
-			</Head>
-			<Layout>
-				<Content>
-					<WorkGrid artworks={artworks} />
-				</Content>
-			</Layout>
-		</>
-	);
+export default function WorkPage({ artworks }: Props): JSX.Element {
+    return (
+        <>
+            <Head>
+                <title>Travaux • Bucko</title>
+            </Head>
+            <Layout>
+                <Content>
+                    <WorkGrid artworks={artworks} />
+                </Content>
+            </Layout>
+        </>
+    );
 }
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-	const artworks = await fetchAllArtworks();
+    const artworks = await fetchAllArtworks();
 
-	return {
-		props: {
-			artworks,
-		},
-		revalidate: 60,
-	};
+    return {
+        props: {
+            artworks,
+        },
+        revalidate: 60,
+    };
 };

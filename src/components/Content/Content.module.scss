@@ -1,18 +1,18 @@
 @import '@styles/theme.scss';
 
 .content {
-	max-width: 1200px;
-	margin: 0 auto;
-	color: $dark;
-	padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: $dark;
+    padding: 6rem 2rem;
 
-	h2 {
-		font-weight: bold;
-		font-size: 2rem;
-		margin-bottom: 2rem;
+    h2 {
+        font-weight: bold;
+        font-size: 2rem;
+        margin-bottom: 2rem;
 
-		@media only screen and (min-width: 960px) {
-			font-size: 3rem;
-		}
-	}
+        @media only screen and (min-width: 960px) {
+            font-size: 3rem;
+        }
+    }
 }

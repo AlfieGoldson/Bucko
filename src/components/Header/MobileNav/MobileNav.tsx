@@ -4,21 +4,21 @@ import { ReactNode } from 'react';
 import { useMobileNav } from '../MobileNavProvider';
 
 interface Props {
-	children: ReactNode;
+    children: ReactNode;
 }
 
-export const MobileNav = ({ children }: Props) => {
-	const { setMobileNavOpened } = useMobileNav();
+export const MobileNav = ({ children }: Props): JSX.Element => {
+    const { setMobileNavOpened } = useMobileNav();
 
-	return createPortal(
-		<div className={styles.mobileNav}>
-			<div
-				className={styles.navGroup}
-				onClick={() => setMobileNavOpened(false)}
-			>
-				{children}
-			</div>
-		</div>,
-		document.getElementById('mobile-nav')
-	);
+    return createPortal(
+        <div className={styles.mobileNav}>
+            <div
+                className={styles.navGroup}
+                onClick={() => setMobileNavOpened(false)}
+            >
+                {children}
+            </div>
+        </div>,
+        document.getElementById('mobile-nav'),
+    );
 };

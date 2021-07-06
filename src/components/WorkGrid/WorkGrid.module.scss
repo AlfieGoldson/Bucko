@@ -1,25 +1,25 @@
 .workGrid {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, 240px);
-	gap: 1rem;
-	padding: 1rem;
-	justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 240px);
+    gap: 1rem;
+    padding: 1rem;
+    justify-content: center;
 
-	.gridItem {
-		height: 240px;
-		overflow: hidden;
-		transition: 0.25s all ease;
+    .gridItem {
+        height: 240px;
+        overflow: hidden;
+        transition: 0.25s all ease;
 
-		&:hover {
-			border-radius: 0.5rem;
-			transform: scale(1.05);
-		}
+        &:hover {
+            border-radius: 0.5rem;
+            transform: scale(1.05);
+        }
 
-		img {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			object-position: center;
-		}
-	}
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
 }

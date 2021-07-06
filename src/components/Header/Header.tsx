@@ -5,25 +5,30 @@ import { NavLinks } from './NavLinks';
 import { useMobileNav } from './MobileNavProvider';
 import { MobileNavBtn } from './MobileNavBtn';
 
-export const Header = () => {
-	const { mobileNavOpened } = useMobileNav();
+export const Header = (): JSX.Element => {
+    const { mobileNavOpened } = useMobileNav();
 
-	return (
-		<div className={styles.header}>
-			<div className={styles.container}>
-				<div className={styles.navGroup}>
-					<Link href='/#'>
-						<a className={styles.headerImg}>
-							<img src='/brand/logo_header.png' alt='logo' />
-						</a>
-					</Link>
-				</div>
-				<div className={styles.navGroup}>
-					<div className={styles.desktopNavGroup}>
-						<NavLinks />
-					</div>
-					<MobileNavBtn />
-					{/* <Link href='#'>
+    return (
+        <div className={styles.header}>
+            <div className={styles.container}>
+                <div className={styles.navGroup}>
+                    <Link href="/#">
+                        <a>
+                            {/* TODO: .svg */}
+                            <img
+                                src="/brand/logo_header.png"
+                                alt="logo"
+                                className={styles.headerImg}
+                            />
+                        </a>
+                    </Link>
+                </div>
+                <div className={styles.navGroup}>
+                    <div className={styles.desktopNavGroup}>
+                        <NavLinks />
+                    </div>
+                    <MobileNavBtn />
+                    {/* <Link href='#'>
 						<a
 							className={styles.navItem}
 							onMouseEnter={() => {
@@ -70,13 +75,13 @@ export const Header = () => {
 							</svg>
 						</a>
 					</Link> */}
-				</div>
-			</div>
-			{mobileNavOpened && (
-				<MobileNav>
-					<NavLinks />
-				</MobileNav>
-			)}
-		</div>
-	);
+                </div>
+            </div>
+            {mobileNavOpened && (
+                <MobileNav>
+                    <NavLinks />
+                </MobileNav>
+            )}
+        </div>
+    );
 };

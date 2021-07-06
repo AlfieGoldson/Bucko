@@ -1,29 +1,29 @@
 .profile {
-	display: flex;
-	flex-direction: column;
-	margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
 
-	.picture {
-		max-width: 240px;
-		max-height: 240px;
-		margin: 0 0 2rem 0;
-	}
+    .picture {
+        max-width: 240px;
+        max-height: 240px;
+        margin: 0 0 2rem 0;
+    }
 
-	.name {
-		text-transform: uppercase;
-		font-size: 1.5rem;
-	}
+    .name {
+        text-transform: uppercase;
+        font-size: 1.5rem;
+    }
 
-	.title {
-		font-size: 1rem;
-		font-weight: bold;
-	}
+    .title {
+        font-size: 1rem;
+        font-weight: bold;
+    }
 
-	@media only screen and (min-width: 600px) {
-		flex-direction: row;
+    @media only screen and (min-width: 600px) {
+        flex-direction: row;
 
-		.picture {
-			margin: 0 2rem 0 0;
-		}
-	}
+        .picture {
+            margin: 0 2rem 0 0;
+        }
+    }
 }

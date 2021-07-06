@@ -1,17 +1,17 @@
 query {
-	allMembers {
-		edges {
-			node {
-				name
-				title
-				description
-				picture
-				socials {
-					platform
-					displayname
-					link
-				}
-			}
-		}
-	}
+    allMembers {
+        edges {
+            node {
+                name
+                title
+                description
+                picture
+                socials {
+                    platform
+                    displayname
+                    link
+                }
+            }
+        }
+    }
 }

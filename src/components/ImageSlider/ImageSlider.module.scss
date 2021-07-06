@@ -1,36 +1,38 @@
 .imageSlider {
-	position: relative;
-	overflow: hidden;
-	height: 240px;
-	margin: 2rem 0;
-	padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    height: 240px;
+    margin: 2rem 0;
+    padding: 2rem;
 
-	.imagesWrapper {
-		position: absolute;
-		top: 0;
-		left: 0;
-		overflow: hidden;
-		white-space: nowrap;
-		height: 100%;
-		animation: slideImages 5s linear infinite;
+    .imagesWrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        height: 100%;
+        animation: slideImages 5s linear infinite;
 
-		&:hover {
-			animation-play-state: paused;
-		}
+        &:hover {
+            animation-play-state: paused;
+        }
 
-		img {
-			height: 100%;
-			border-radius: 1rem;
-			margin-right: 1rem;
-		}
-	}
+        .image {
+            height: 100%;
+            width: 240px;
+            border-radius: 1rem;
+            margin-right: 1rem;
+            overflow: hidden;
+        }
+    }
 }
 
 @keyframes slideImages {
-	0% {
-		transform: translate(0, 0);
-	}
-	100% {
-		transform: translate(-25%, 0);
-	}
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-25%, 0);
+    }
 }
