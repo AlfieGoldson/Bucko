@@ -9,10 +9,8 @@ export const ServiceCard = ({
 }: IService): JSX.Element => {
     return (
         <div className={styles.card}>
-            <div className={styles.titleContainer}>
-                <img src={icon} alt={title} className={styles.icon} />
-                <p className={styles.title}>{title}</p>
-            </div>
+            <img src={icon} alt={title} className={styles.icon} />
+            <p className={styles.title}>{title}</p>
             <p className={styles.content}>
                 <RichText render={content} />
             </p>

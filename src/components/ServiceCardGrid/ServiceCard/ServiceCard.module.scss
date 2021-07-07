@@ -1,22 +1,17 @@
 @import '@styles/theme.scss';
 
 .card {
-    .titleContainer {
-        display: flex;
-        align-items: center;
-        margin-bottom: 1rem;
+    text-align: center;
+    padding: 2rem;
+    // border: 1px solid rgba($darker, 0.08);
 
-        .title {
-            font-weight: bold;
-        }
-
-        .icon {
-            width: 2rem;
-            height: 2rem;
-            margin-right: 0.5rem;
-        }
+    .title {
+        font-weight: bold;
+        font-size: 1.5rem;
     }
 
-    padding: 2rem;
-    border: 1px solid rgba($darker, 0.08);
+    .icon {
+        width: 6rem;
+        height: 6rem;
+    }
 }

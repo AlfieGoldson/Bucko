@@ -1,5 +1,8 @@
 .cardGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    gap: 0.5rem 8rem;
+    // TODO: use this for 6+ services
+    // grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    // gap: 0.5rem;
 }

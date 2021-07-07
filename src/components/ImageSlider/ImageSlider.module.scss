@@ -12,7 +12,7 @@
         overflow: hidden;
         white-space: nowrap;
         height: 100%;
-        animation: slideImages 5s linear infinite;
+        animation: slideImages 10s linear infinite;
 
         &:hover {
             animation-play-state: paused;
