@@ -1,25 +1,10 @@
 # Bucko
 
-[Bucko.studio](https://Bucko.studio)
-
-## Stack
-
--   ReactJS
--   NextJS
--   PopperJS
--   Gray Matter
--   Remark
--   Sass
--   Framer Motion
+[bucko.graphics](https://bucko.graphics)
 
 ## Todo
 
--   Blog
-    -   [x] Static Blogpost Loading
--   Mobile Version
-    -   [x] Mobile Menu
 -   Animations
-    -   [x] Page Transitions
     -   [ ] Menu Animation
     -   [ ] Scroll Animations
 -   Internationalization
