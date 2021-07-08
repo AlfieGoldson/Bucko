@@ -12,7 +12,10 @@
         overflow: hidden;
         white-space: nowrap;
         height: 100%;
-        animation: slideImages 10s linear infinite;
+        animation-name: slideImages;
+        animation-duration: 10s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
 
         &:hover {
             animation-play-state: paused;
@@ -21,7 +24,7 @@
         .image {
             height: 100%;
             width: 240px;
-            border-radius: 1rem;
+            border-radius: 0.5rem;
             margin-right: 1rem;
             overflow: hidden;
         }

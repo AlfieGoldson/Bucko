@@ -4,6 +4,7 @@ query {
             node {
                 title
                 thumb
+                thumb_display
                 type
             }
         }

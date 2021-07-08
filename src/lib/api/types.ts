@@ -7,9 +7,12 @@ export interface ITestimonial {
     picture: string;
 }
 
+export type ArtworkThumbDisplay = 'horizontal' | 'vertical' | 'big' | null;
+
 export interface IArtwork {
     title: string;
     thumb: string;
+    thumbDisplay: ArtworkThumbDisplay;
     type: string;
 }
 

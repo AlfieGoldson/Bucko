@@ -1,18 +1,28 @@
+@import '@styles/theme.scss';
+
 .workGrid {
     display: grid;
     grid-template-columns: repeat(auto-fill, 240px);
+    grid-auto-rows: 240px;
     gap: 1rem;
-    padding: 1rem;
+    grid-auto-flow: dense;
     justify-content: center;
 
     .gridItem {
-        height: 240px;
-        overflow: hidden;
-        transition: 0.25s all ease;
+        width: 100%;
+        height: auto;
 
-        &:hover {
-            border-radius: 0.5rem;
-            transform: scale(1.05);
+        &.horizontal {
+            grid-column: span 2;
+        }
+
+        &.vertical {
+            grid-row: span 2;
+        }
+
+        &.big {
+            grid-column: span 2;
+            grid-row: span 2;
         }
 
         img {
@@ -20,6 +30,12 @@
             height: 100%;
             object-fit: cover;
             object-position: center;
+            transition: 0.25s all ease;
+
+            &:hover {
+                box-shadow: 0 0 1rem rgba($dark, 0.08);
+                transform: scale(1.05);
+            }
         }
     }
 }

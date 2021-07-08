@@ -8,7 +8,12 @@ interface Props {
 export const ImageSlider = ({ images }: Props): JSX.Element => {
     return (
         <div className={styles.imageSlider}>
-            <div className={styles.imagesWrapper}>
+            <div
+                className={styles.imagesWrapper}
+                style={{
+                    animationDuration: `${images.length * 2}s`,
+                }}
+            >
                 {[...images, ...images, ...images, ...images].map(
                     ({ thumb, title }, i) => (
                         <img

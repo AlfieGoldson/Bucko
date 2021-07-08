@@ -13,10 +13,16 @@ export const WorkGrid = ({ artworks }: Props): JSX.Element => {
             {shuffle(artworks).map((artwork, i) => (
                 <motion.div
                     key={i}
-                    className={styles.gridItem}
+                    className={`${styles.gridItem} ${
+                        artwork.thumbDisplay ? styles[artwork.thumbDisplay] : ''
+                    }`}
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
-                    transition={{ duration: 0.02 * i }}
+                    transition={{
+                        duration: 0.15,
+                        delay: 0.05 * i,
+                        ease: 'easeOut',
+                    }}
                 >
                     <img src={artwork.thumb} alt={artwork.title} />
                 </motion.div>

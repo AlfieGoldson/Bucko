@@ -50,6 +50,7 @@ export const fetchHomePageContent = async (): Promise<{
             title: RichText.asText(title),
             thumb: thumb.url ?? '',
             type: 'Logo',
+            thumbDisplay: null,
         })),
         testimonials: testimonials.map(
             ({ client: { name, content, date, picture } }) => ({
